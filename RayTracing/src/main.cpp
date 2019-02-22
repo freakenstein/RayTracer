@@ -92,7 +92,7 @@ vec3 random_in_unit_sphere()
 vec3 color(const ray& r, hitable *world)
 {
 	hit_record rec;
-	if (world->hit(r, 0.0, FLT_MAX, rec))
+	if (world->hit(r, 0.001, FLT_MAX, rec))
 	{
 		//return 0.5*vec3(rec.normal.r() + 1.0, rec.normal.g() + 1.0, rec.normal.b() + 1.0);
 		vec3 target = rec.p + rec.normal + random_in_unit_sphere();
